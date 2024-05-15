@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="web.png" type="image/x-icon" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Web Crippling Stiffener</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="main-heading">
+        <h1 id="popup">Web Crippling / Stiffener<img src="web.png" /></h1>
+      </div>
+
+      <div class="grid-container">
+        <div class="member-container grid-item">
+          <h2>Beam Details</h2>
+          <label for="shape-select">Select Shape:</label>
+
+          <select id="shape-select">
+            <option value="custom">Custom</option>
+            <option value="w-shape-metric">W-shape Metric</option>
+            <option value="w-shape-imperial">W-shape Imperial</option>
+          </select>
+
+          <div id="inputs-container"></div>
+        </div>
+
+        <div class="properties-container grid-item">
+          <div class="heading">
+            <h2>Properties</h2>
+          </div>
+          <div class="section-properties">
+            <div id="Dsg"></div>
+            <div id="shape">Shape: <span>Wide-Flange</span></div>
+            <div id="Ds_i"></div>
+          </div>
+          <div class="properties">
+            <div class="not-custom">
+              <div id="D">D =</div>
+              <div id="B">B =</div>
+            </div>
+            <div id="T">t =</div>
+            <div id="W">w =</div>
+            <div id="material-custom">
+              <div id="fy-custom">fy =</div>
+              <div id="E-custom">E =</div>
+            </div>
+            <div id="material-not-custom">
+              <div id="fy">fy = 350MPa</div>
+              <div id="E">E = 200000MPa</div>
+            </div>
+          </div>
+        </div>
+
+        <div id="bearing-container" class="grid-item">
+          <label
+            ><input
+              id="interior"
+              type="radio"
+              name="bearing-type"
+              value="interior"
+              checked
+            />
+            Interior</label
+          >
+          <label
+            ><input
+              id="end"
+              type="radio"
+              name="bearing-type"
+              value="end-reaction"
+            />
+            End Reaction</label
+          >
+          <div class="input-row">
+            Load: P
+            <input id="load-input" type="float" id="load-input" value="100" />
+            kN
+          </div>
+          <div class="input-row">
+            Length of Bearing: N
+            <input id="length-input" type="float" value="100" /> mm
+          </div>
+        </div>
+
+        <div class="results grid-item">
+          <div class="heading">
+            <h2>Bearing Resistance</h2>
+          </div>
+          <div class="load-type">
+            <div id="load"></div>
+            <div id="phi"></div>
+          </div>
+          <div class="bearing">
+            Bearing resistance of the web shall be the smaller of:
+          </div>
+          <div>
+            <ol class="results-list"></ol>
+          </div>
+          <div id="Br"></div>
+          <div id="utilization"></div>
+          <div id="stiffener-requirement"></div>
+        </div>
+      </div>
+      <div id="popupContainer" class="popup-container">
+        <div class="popup-content popup-grid">
+          <div class="popup-grid-item">
+            <img id="qrCodeImage" src="qrtest.png" alt="QR Code" />
+          </div>
+          <div class="popup-grid-item no-border">
+            <button id="copyLinkBtn">Copy Link</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="beam_list.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
