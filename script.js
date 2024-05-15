@@ -393,7 +393,7 @@ function managePopUp() {
   });
 
   copyBtn.addEventListener("click", function () {
-    const linkToCopy = "https://www.oshemy.info";
+    const linkToCopy = "https://web-stiffener-calc.vercel.app";
     navigator.clipboard
       .writeText(linkToCopy)
       .then(function () {
@@ -409,4 +409,3 @@ document.addEventListener("DOMContentLoaded", () => {
   setCustomDefaultAndListen();
   managePopUp();
 });
-
